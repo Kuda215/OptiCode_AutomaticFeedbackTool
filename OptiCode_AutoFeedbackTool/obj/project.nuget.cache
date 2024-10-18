@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zFEMWefBEgiYRAfuEO+38DRRyxtgxBzl5sx+2YmhiO7zw5iTff4R2mTeAblzdQXGKuGnherKGEEPX4iO2JdJWQ==",
+  "dgSpecHash": "vNvWnfiVTAUtPYWkwvvsqBpQDl7lll8ZSKlgG2dmEKLXvKFHq3ONSxiQe57RSm8aKDRu11miHlo0grBC1fu/0A==",
   "success": true,
-  "projectFilePath": "C:\\NewestSource\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj",
+  "projectFilePath": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

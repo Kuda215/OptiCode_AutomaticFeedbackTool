@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\OptiCode_AutoFeedbackTool.props" />
+</Project>

@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\obj\\Debug\\net8.0\\compressed\\cbgq8gheyi.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.OptiCode_AutoFeedbackTool.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.OptiCode_AutoFeedbackTool.Client.props",
+      "PackagePath": "build\\OptiCode_AutoFeedbackTool.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.OptiCode_AutoFeedbackTool.Client.props",
+      "PackagePath": "buildMultiTargeting\\OptiCode_AutoFeedbackTool.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.OptiCode_AutoFeedbackTool.Client.props",
+      "PackagePath": "buildTransitive\\OptiCode_AutoFeedbackTool.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\NewestSource\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj": {}
+    "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj": {}
   },
   "projects": {
-    "C:\\NewestSource\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj": {
+    "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\NewestSource\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj",
+        "projectUniqueName": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj",
         "projectName": "OptiCode_AutoFeedbackTool.Client",
-        "projectPath": "C:\\NewestSource\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj",
+        "projectPath": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj",
         "packagesPath": "C:\\Users\\MinewareUser12\\.nuget\\packages\\",
-        "outputPath": "C:\\NewestSource\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\obj\\",
+        "outputPath": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",

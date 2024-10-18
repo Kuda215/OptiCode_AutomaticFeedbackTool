@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\OptiCode_AutoFeedbackTool.bundle.scp.css",
+      "PackagePath": "staticwebassets\\OptiCode_AutoFeedbackTool.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.OptiCode_AutoFeedbackTool.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.OptiCode_AutoFeedbackTool.props",
+      "PackagePath": "build\\OptiCode_AutoFeedbackTool.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.OptiCode_AutoFeedbackTool.props",
+      "PackagePath": "buildMultiTargeting\\OptiCode_AutoFeedbackTool.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.OptiCode_AutoFeedbackTool.props",
+      "PackagePath": "buildTransitive\\OptiCode_AutoFeedbackTool.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

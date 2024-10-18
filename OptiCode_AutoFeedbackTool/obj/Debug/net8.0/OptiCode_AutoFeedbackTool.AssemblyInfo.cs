@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OptiCode_AutoFeedbackTool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+faad7f29794e7a9beaf5b666ee9e6f3274076d49")]
 [assembly: System.Reflection.AssemblyProductAttribute("OptiCode_AutoFeedbackTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OptiCode_AutoFeedbackTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
