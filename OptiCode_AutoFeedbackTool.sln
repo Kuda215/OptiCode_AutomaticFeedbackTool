@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptiCode_AutoFeedbackTool", "OptiCode_AutoFeedbackTool\OptiCode_AutoFeedbackTool.csproj", "{21C93FDA-0C65-4D7F-B270-C390D186AB5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptiCode_AutoFeedbackTool.Client", "OptiCode_AutoFeedbackTool.Client\OptiCode_AutoFeedbackTool.Client.csproj", "{7EE8666C-126F-425E-B000-2CE76471F012}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21C93FDA-0C65-4D7F-B270-C390D186AB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C93FDA-0C65-4D7F-B270-C390D186AB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C93FDA-0C65-4D7F-B270-C390D186AB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C93FDA-0C65-4D7F-B270-C390D186AB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE8666C-126F-425E-B000-2CE76471F012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE8666C-126F-425E-B000-2CE76471F012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE8666C-126F-425E-B000-2CE76471F012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE8666C-126F-425E-B000-2CE76471F012}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83A6A225-BC94-4A89-B291-5AE9D6D3F576}
+	EndGlobalSection
+EndGlobal
