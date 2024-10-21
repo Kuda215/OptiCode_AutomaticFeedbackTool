@@ -29,7 +29,7 @@
             <ValidationSummary class="text-danger" role="alert" />
             <div class="form-floating mb-3">
                 <InputText @bind-Value="Input.Student_Number" class="form-control" autocomplete="student_Number" aria-required="true" placeholder="uXXXXXXX" />
-                <label for="student_Number">Email</label>
+                <label for="student_Number">Stuent Number</label>
                 <ValidationMessage For="() => Input.Student_Number" class="text-danger" />
             </div>
             <div class="form-floating mb-3">
@@ -132,7 +132,6 @@
     private sealed class InputModel
     {
         [Required]
-        [EmailAddress]
         [Display(Name = "Student_Number")]
         public string Student_Number { get; set; } = "";
 

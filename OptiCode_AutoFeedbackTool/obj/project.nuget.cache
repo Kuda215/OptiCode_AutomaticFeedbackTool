@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vNvWnfiVTAUtPYWkwvvsqBpQDl7lll8ZSKlgG2dmEKLXvKFHq3ONSxiQe57RSm8aKDRu11miHlo0grBC1fu/0A==",
+  "dgSpecHash": "z5aQ11STMbtInrJdzSjwbrdFeQzpIYvqa6X8eOAQ0FBSjTDFTLmOC+cS88fa86UTZnf7YfBEQU2KigwQiAJNpQ==",
   "success": true,
   "projectFilePath": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj",
   "expectedPackageFiles": [
@@ -71,6 +71,7 @@
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\MinewareUser12\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",

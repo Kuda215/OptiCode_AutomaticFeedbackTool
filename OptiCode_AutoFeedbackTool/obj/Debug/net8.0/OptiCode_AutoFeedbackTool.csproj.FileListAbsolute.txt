@@ -167,3 +167,4 @@ C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\obj\Deb
 C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\obj\Debug\net8.0\OptiCode_AutoFeedbackTool.pdb
 C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\obj\Debug\net8.0\OptiCode_AutoFeedbackTool.genruntimeconfig.cache
 C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\obj\Debug\net8.0\ref\OptiCode_AutoFeedbackTool.dll
+C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\bin\Debug\net8.0\Newtonsoft.Json.dll

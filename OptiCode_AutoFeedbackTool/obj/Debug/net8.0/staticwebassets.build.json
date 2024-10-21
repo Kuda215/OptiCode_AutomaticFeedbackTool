@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dU/FDlX4fsS34BzkGOQ43aSYQury72YxSxFEHnEnlqU=",
+  "Hash": "y+l1sYXbZSOO9rh3KiiXPwitJUeFtZppNmhJct8UX7Y=",
   "Source": "OptiCode_AutoFeedbackTool",
   "BasePath": "_content/OptiCode_AutoFeedbackTool",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "OptiCode_AutoFeedbackTool.Client",
       "GetPublishAssetsTargets": "ComputeFilesToPublish;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "_PublishingBlazorWasmProject=true;BuildProjectReferences=false;ResolveAssemblyReferencesFindRelatedSatellites=true",
+      "AdditionalPublishProperties": "_PublishingBlazorWasmProject=true;BuildProjectReferences=false;ResolveAssemblyReferencesFindRelatedSatellites=true;Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "NoBuild;RuntimeIdentifier;WebPublishProfileFile;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "RuntimeIdentifier;SelfContained;WebPublishProfileFile;TargetFramework"
     }
   ],
