@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/20/2011 11:23:14" ReportInfo.Modified="10/22/2024 02:40:36" ReportInfo.CreatorVersion="2019.1.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void PageHeader1_BeforePrint(object sender, EventArgs e)
+    {
+     
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <Parameter Name="Banner" DataType="System.String"/>
+    <Parameter Name="TheDate" DataType="System.DateTime"/>
+    <Parameter Name="TheShaft" DataType="System.String" Expression="&quot;Shaft Manager 3#&quot;"/>
+    <Parameter Name="theDate" DataType="System.String"/>
+    <Parameter Name="logo" DataType="System.String"/>
+    <Parameter Name="logoMineware" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="15" OtherPagesSource="15">
+    <PageHeaderBand Name="PageHeader1" Width="793.8" Height="141.75" Fill.Color="DarkSlateGray" BeforePrintEvent="PageHeader1_BeforePrint">
+      <TextObject Name="Text1" Left="18.9" Top="28.35" Width="444.15" Height="37.8" Text="Code Effiency Report" Font="Bahnschrift Condensed, 20pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text2" Left="595.35" Top="37.8" Width="444.15" Height="37.8" Text="[Date]" Format="Date" Format.Format="D" Font="Bahnschrift Condensed, 14pt" TextFill.Color="White"/>
+      <ShapeObject Name="Shape5" Left="-9450" Top="-9450" Height="85.05" Border.Color="White" Border.Style="Double" Border.Width="2" Fill.Color="Gainsboro" Shape="Ellipse"/>
+      <TextObject Name="Text34" Left="18.9" Top="66.15" Width="340.2" Height="18.9" Text="COS 750 - Software Engineering" VertAlign="Center" Font="Arial, 14pt, style=Italic" TextFill.Color="White"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="145.03" Width="793.8" Height="822.15">
+      <ShapeObject Name="Shape1" Left="444.15" Top="37.8" Width="349.65" Height="274.05" Border.Color="Gainsboro" Shape="RoundRectangle"/>
+      <ShapeObject Name="Shape6" Left="28.35" Top="387.45" Width="37.8" Height="37.8" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Fill.Color="White" Shape="Ellipse"/>
+      <ShapeObject Name="Shape7" Left="28.35" Top="434.7" Width="37.8" Height="37.8" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Fill.Color="White" Shape="Ellipse"/>
+      <TextObject Name="Text16" Left="85.05" Top="349.65" Width="217.35" Height="28.35" Fill.Color="White" Text="Cyclomatic Complexity - " VertAlign="Center" Font="Arial, 12pt" TextFill.Color="44, 72, 103"/>
+      <TextObject Name="Text17" Left="85.05" Top="396.9" Width="141.75" Height="28.35" Fill.Color="White" Text="Code Coverage" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="44, 72, 103"/>
+      <TextObject Name="Text18" Left="85.05" Top="434.7" Width="179.55" Height="28.35" Fill.Color="White" Text="Mantainabilty Index" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="44, 72, 103"/>
+      <TextObject Name="Text22" Left="311.85" Top="349.65" Width="94.5" Height="28.35" Fill.Color="White" Text=": 12/20" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="44, 72, 103"/>
+      <TextObject Name="Text23" Left="311.85" Top="387.45" Width="94.5" Height="28.35" Fill.Color="White" Text=": 75%" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="44, 72, 103"/>
+      <TextObject Name="Text24" Left="311.85" Top="434.7" Width="94.5" Height="28.35" Fill.Color="White" Text=": 80%" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="44, 72, 103"/>
+      <TextObject Name="Text38" Top="481.95" Width="793.8" Height="18.9" Text="Overall Efficiency Score Over Time" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text21" Left="434.7" Top="661.5" Width="321.3" Height="132.3" Fill.Color="White" Text="This graph illustrates your overall efficiency score across different assignments. Notice the upward trend, indicating consistent improvement in your coding skills and efficiency. Keep up the good work!" Font="Arial, 12pt" TextFill.Color="DarkSlateGray"/>
+      <ShapeObject Name="Shape4" Left="28.35" Top="340.2" Width="37.8" Height="37.8" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Fill.Color="White" Shape="Ellipse"/>
+      <TextObject Name="Text35" Left="368.55" Top="555.66" Width="217.35" Height="28.35" Text="Overall Score" VertAlign="Center" Font="Arial, 12pt" TextFill.Color="CadetBlue"/>
+      <TextObject Name="Text39" Left="434.7" Top="614.25" Width="576.45" Height="18.9" Text="Performance OverView" VertAlign="Center" Font="Arial, 12pt, style=Bold, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text3" Left="576.45" Top="217.35" Width="47.25" Height="47.25" Text="B" Font="Bahnschrift SemiBold, 36pt" TextFill.Color="White"/>
+      <TextObject Name="Text19" Left="18.9" Top="255.15" Width="207.9" Height="18.9" Fill.Color="White" Text="Execution Time: 0.5s" VertAlign="Center" Font="Arial, 14pt" TextFill.Color="135, 193, 241"/>
+      <TextObject Name="Text31" Left="18.9" Top="292.95" Width="207.9" Height="18.9" Fill.Color="White" Text="Memory Usage: 50MB" VertAlign="Center" Font="Arial, 14pt" TextFill.Color="135, 193, 241"/>
+      <TextObject Name="Text32" Left="245.7" Top="255.15" Width="179.55" Height="18.9" Fill.Color="White" Text="CPU Usage: 0.5s" VertAlign="Center" Font="Arial, 14pt" TextFill.Color="135, 193, 241"/>
+      <LineObject Name="Line3" Left="689.85" Top="217.35" Width="47.25" Height="-66.15" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Diagonal="true" EndCap.Style="Arrow"/>
+      <PolygonObject Name="Polygon1" Left="567" Top="160.65" Width="100" Height="100" Border.Color="LightYellow" Border.Style="Double" Border.Width="2" Fill.Color="SlateGray" PolyPoints="100\50\0|85.35534\85.35534\1|50\100\1|14.64466\85.35534\1|0\50\1|14.64466\14.64466\1|50\0\1|85.35534\14.64466\1" CenterX="0" CenterY="0"/>
+      <ShapeObject Name="Shape2" Left="548.1" Top="170.1" Width="113.4" Height="113.4" Border.Color="White" Border.Style="Double" Border.Width="2" Fill.Color="249, 124, 0" Shape="Ellipse"/>
+      <TextObject Name="Text4" Left="604.8" Top="198.45" Width="47.25" Height="47.25" Text="A" Font="Bahnschrift SemiBold Condensed, 20pt" TextFill.Color="White"/>
+      <TextObject Name="Text7" Left="18.9" Top="151.2" Width="396.9" Height="85.05" Text="Awesome work on your assignment! Dive into the report below to see how your code performed. Keep pushing those coding skills to the next level!" Font="Arial, 14pt" TextFill.Color="DarkSlateGray"/>
+      <ShapeObject Name="Shape3" Left="661.5" Top="207.9" Width="37.8" Height="28.35" Border.Color="LightYellow" Border.Style="Double" Border.Width="2" Fill.Color="Lime" Shape="Triangle"/>
+      <LineObject Name="Line1" Left="529.2" Top="207.9" Width="-28.35" Height="-56.7" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Diagonal="true" EndCap.Style="Arrow"/>
+      <LineObject Name="Line2" Left="623.7" Top="189" Height="-85.05" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Diagonal="true" EndCap.Style="Arrow"/>
+      <TextObject Name="Text33" Left="18.9" Top="113.4" Width="396.9" Height="18.9" Fill.Color="White" Text="Kudakwashe Chivunga - u19068752" VertAlign="Center" Font="Arial, 14pt" TextFill.Color="Silver"/>
+      <TextObject Name="Text20" Left="699.3" Top="132.3" Width="94.5" Height="18.9" Text="Improvement" VertAlign="Center" TextFill.Color="Lime"/>
+      <TextObject Name="Text37" Left="463.05" Top="122.85" Width="94.5" Height="18.9" Text="Improvement" VertAlign="Center" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text36" Left="595.35" Top="56.7" Width="94.5" Height="18.9" Text="Improvement" VertAlign="Center" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text5" Left="94.5" Top="37.8" Width="255.15" Height="47.25" Text="Kuda!" Font="Comic Sans MS, 20pt" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text6" Left="9.45" Width="151.2" Height="75.6" Text="Hi" Font="Comic Sans MS, 48pt, style=Bold" TextFill.Color="249, 124, 0"/>
+      <TextObject Name="Text77" Left="585.9" Top="226.8" Width="47.25" Height="47.25" Text="B" Font="Bahnschrift SemiBold Condensed, 36pt" TextFill.Color="White"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="970.46" Width="793.8" Height="141.75" Fill.Color="249, 124, 0">
+      <PolygonObject Name="Polygon4" Left="529.2" Width="100" Height="100" Border.Color="LightYellow" Border.Style="Double" Border.Width="2" Fill.Color="249, 124, 0" PolyPoints="100\50\0|65.45085\97.55283\1|9.549149\79.38927\1|9.549149\20.61074\1|65.45085\2.447174\1" CenterX="0" CenterY="0"/>
+      <PolygonObject Name="Polygon3" Left="311.85" Width="118.9" Height="100" Border.Color="LightYellow" Border.Style="Double" Border.Width="2" Fill.Color="249, 124, 0" PolyPoints="118.9\50\0|77.82106\97.55283\1|11.35394\79.38927\1|11.35394\20.61074\1|77.82106\2.447174\1" CenterX="0" CenterY="0"/>
+      <PolygonObject Name="Polygon2" Left="66.15" Width="109.45" Height="100" Border.Color="LightYellow" Border.Style="Double" Border.Width="2" Fill.Color="249, 124, 0" PolyPoints="109.45\50\0|71.63596\97.55283\1|10.45154\79.38927\1|10.45154\20.61074\1|71.63596\2.447174\1" CenterX="0" CenterY="0"/>
+      <TextObject Name="Text8" Left="56.7" Top="103.95" Width="151.2" Height="18.9" Fill.Color="249, 124, 0" Text="Lines Of Code" Font="Arial, 12pt, style=Bold, Italic" TextFill.Color="White"/>
+      <TextObject Name="Text9" Left="85.05" Top="28.35" Width="75.6" Height="47.25" Fill.Color="249, 124, 0" Text="380" Font="Arial, 26pt, style=Bold, Italic" TextFill.Color="White"/>
+      <TextObject Name="Text10" Left="359.1" Top="28.35" Width="47.25" Height="37.8" Fill.Color="249, 124, 0" Text="2" Font="Arial, 25pt, style=Bold, Italic" TextFill.Color="White"/>
+      <TextObject Name="Text11" Left="274.05" Top="103.95" Width="179.55" Height="28.35" Fill.Color="249, 124, 0" Text="Number Of Functions" Font="Arial, 12pt, style=Bold, Italic" TextFill.Color="White"/>
+      <TextObject Name="Text12" Left="557.55" Top="28.35" Width="56.7" Height="47.25" Fill.Color="249, 124, 0" Text="12&#13;&#10;" Font="Arial, 25pt, style=Bold, Italic" TextFill.Color="White"/>
+      <TextObject Name="Text13" Left="500.85" Top="103.95" Width="198.45" Height="28.35" Fill.Color="249, 124, 0" Text="Number Of Comments" Font="Arial, 12pt, style=Bold, Italic" TextFill.Color="White"/>
+      <TextObject Name="Text14" Left="718.2" Top="47.25" Width="66.15" Height="28.35" Fill.Color="249, 124, 0" Text="[Page]" Font="Arial, 12pt, style=Bold, Italic" TextFill.Color="44, 72, 103"/>
+      <TextObject Name="Text15" Left="661.5" Top="47.25" Width="56.7" Height="28.35" Fill.Color="249, 124, 0" Text="Page:" Font="Arial, 12pt, style=Bold, Italic" TextFill.Color="44, 72, 103"/>
+    </PageFooterBand>
+  </ReportPage>
+  <ReportPage Name="Page2" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="15" OtherPagesSource="15">
+    <PageHeaderBand Name="PageHeader2" Width="793.8" Height="122.85" Fill.Color="DarkSlateGray" BeforePrintEvent="PageHeader1_BeforePrint">
+      <TextObject Name="Text25" Left="18.9" Top="28.35" Width="444.15" Height="37.8" Text="Code Effiency Report" Font="Bahnschrift Condensed, 20pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text26" Left="595.35" Top="37.8" Width="444.15" Height="37.8" Text="[Date]" Format="Date" Format.Format="D" Font="Bahnschrift Condensed, 14pt" TextFill.Color="White"/>
+      <ShapeObject Name="Shape8" Left="-9450" Top="-9450" Height="85.05" Border.Color="White" Border.Style="Double" Border.Width="2" Fill.Color="Gainsboro" Shape="Ellipse"/>
+      <TextObject Name="Text27" Left="18.9" Top="66.15" Width="340.2" Height="18.9" Text="Descriptive Analyisis" VertAlign="Center" Font="Arial, 14pt, style=Italic" TextFill.Color="White"/>
+    </PageHeaderBand>
+    <DataBand Name="Data7" Top="131.36" Width="793.8" Height="529.2" KeepChild="true">
+      <TextObject Name="Text67" Top="9.45" Width="784.35" Height="28.35" Text="Detailed Effieciency Break Down" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text28" Left="28.35" Top="56.7" Width="746.55" Height="94.5" Fill.Color="White" Text="This page provides a comprehensive analysis of your code quality. It compares your submitted code with industry standards, offering alternative code suggestions to enhance performance. You’ll find explanations of key metrics and their impact on your code quality, along with actionable feedback to help you improve. Additionally, this section highlights your progress over time by comparing current metrics with past assignments." Font="Arial, 12pt" TextFill.Color="DarkSlateGray"/>
+      <ShapeObject Name="Shape9" Left="28.35" Top="189" Width="37.8" Height="37.8" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Fill.Color="White" Shape="Ellipse"/>
+      <TextObject Name="Text68" Left="75.6" Top="204.12" Width="141.75" Height="28.35" Text="Duplicate Code:" VertAlign="Center" Font="Arial, 12pt, style=Bold, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text69" Left="75.6" Top="236.25" Width="368.55" Height="18.9" Fill.Color="White" Text="No Duplicate Code Detected" Font="Arial, 12pt" TextFill.Color="MediumTurquoise"/>
+      <TextObject Name="Text29" Left="75.6" Top="283.5" Width="670.95" Height="94.5" Text="Comment"/>
+      <TextObject Name="Text83" Left="75.6" Top="415.8" Width="670.95" Height="66.15" Text="Code Comparisons"/>
+    </DataBand>
+    <DataBand Name="Data9" Top="669.07" Width="793.8" Height="378">
+      <TextObject Name="Text76" Left="75.6" Top="56.7" Width="264.6" Height="18.9" Fill.Color="White" Text="Good Memory Mangement" Font="Arial, 12pt" TextFill.Color="MediumTurquoise"/>
+      <ShapeObject Name="Shape12" Left="28.35" Top="9.45" Width="37.8" Height="37.8" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Fill.Color="White" Shape="Ellipse"/>
+      <TextObject Name="Text75" Left="75.6" Top="13.23" Width="217.35" Height="28.35" Text="Memory Management:" VertAlign="Center" Font="Arial, 12pt, style=Bold, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text84" Left="75.6" Top="113.4" Width="670.95" Height="94.5" Text="Comment"/>
+      <TextObject Name="Text85" Left="75.6" Top="245.7" Width="670.95" Height="103.95" Text="Code Comparisons"/>
+    </DataBand>
+    <DataBand Name="Data8" Top="1055.58" Width="793.8" Height="1143.45">
+      <ShapeObject Name="Shape13" Left="28.35" Top="9.45" Width="37.8" Height="37.8" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Fill.Color="White" Shape="Ellipse"/>
+      <TextObject Name="Text78" Left="75.6" Top="15.12" Width="264.6" Height="28.35" Text="Code Structure &amp; Readability:" VertAlign="Center" Font="Arial, 12pt, style=Bold, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text79" Left="75.6" Top="56.7" Width="378" Height="18.9" Fill.Color="White" Text="Code is well structured and readable - how it affects mantainability" Font="Arial, 12pt" TextFill.Color="MediumTurquoise"/>
+      <TextObject Name="Text80" Left="113.4" Top="94.5" Width="264.6" Height="28.35" Text="1. Maintanability" VertAlign="Center" Font="Arial, 12pt, style=Italic, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text81" Left="113.4" Top="444.15" Width="264.6" Height="28.35" Text="2. Error Handling" VertAlign="Center" Font="Arial, 12pt, style=Italic, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text82" Left="113.4" Top="793.8" Width="264.6" Height="28.35" Text="3. Comment Coverage" VertAlign="Center" Font="Arial, 12pt, style=Italic, Underline" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text86" Left="113.4" Top="151.2" Width="623.7" Height="94.5" Text="Comment"/>
+      <TextObject Name="Text87" Left="113.4" Top="283.5" Width="623.7" Height="103.95" Text="Code Comparisons"/>
+      <TextObject Name="Text88" Left="113.4" Top="510.3" Width="623.7" Height="94.5" Text="Comment"/>
+      <TextObject Name="Text89" Left="113.4" Top="642.6" Width="623.7" Height="103.95" Text="Code Comparisons"/>
+      <TextObject Name="Text90" Left="113.4" Top="859.95" Width="623.7" Height="113.4" Text="Comment"/>
+      <TextObject Name="Text91" Left="113.4" Top="1020.6" Width="623.7" Height="103.95" Text="Code Comparisons"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter2" Top="2207.54" Width="793.8" Height="94.5" Fill.Color="249, 124, 0">
+      <TextObject Name="Text65" Left="708.75" Top="37.8" Width="66.15" Height="28.35" Fill.Color="249, 124, 0" Text="[Page]" Font="Arial, 12pt, style=Bold, Italic" TextFill.Color="44, 72, 103"/>
+      <TextObject Name="Text66" Left="642.6" Top="37.8" Width="56.7" Height="28.35" Fill.Color="249, 124, 0" Text="Page:" Font="Arial, 12pt, style=Bold, Italic" TextFill.Color="44, 72, 103"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

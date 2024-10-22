@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,14 +47,40 @@ public class CodeAnalysisTool
             },
             max_tokens = 1400
         };
-     
+
         var json = Newtonsoft.Json.JsonConvert.SerializeObject(prompt);
         var requestContent = new StringContent(json, Encoding.UTF8, "application/json");
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
 
-        var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", requestContent);
-        response.EnsureSuccessStatusCode();
-        return await response.Content.ReadAsStringAsync();
+        for (int attempt = 0; attempt < 3; attempt++)
+        {
+            var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", requestContent);
+            response.EnsureSuccessStatusCode();
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            try
+            {
+                var parsedJson = JObject.Parse(responseBody);
+
+                var messageContent = parsedJson["choices"][0]["message"]["content"].ToString();
+
+                var resultJson = JObject.Parse(messageContent);
+                return resultJson.ToString();
+            }
+            catch (Exception)
+            {
+                if (attempt < 3 - 1)
+                {
+                    await Task.Delay(1000);
+                }
+                else
+                {
+                    throw new Exception("Failed to get a valid Summary Aanalysis after multiple attempts. Try Again Later");
+                }
+            }
+        }
+        return null;
     }
 
     public async Task<string> GetGraphs(string lang, string codeSnippet)
@@ -119,7 +146,8 @@ public class CodeAnalysisTool
                 "    \"bottom_text\": \"Visualizes strengths and weaknesses in coding skills.\", \n" +
                 "    \"data-point-labels\": [\"Loops\", \"Functions\", \"Data Structures\", \"Error Handling\", \"Comments\"]\n " +
                 "  }\n" +
-                "}" }
+                "}" +
+                "Note: Produce a valid json result , no extra characters" }
     },
             max_tokens = 1200
         };
@@ -129,9 +157,36 @@ public class CodeAnalysisTool
         var requestContent = new StringContent(json, Encoding.UTF8, "application/json");
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
 
-        var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", requestContent);
-        response.EnsureSuccessStatusCode();
-        return await response.Content.ReadAsStringAsync();
+        for (int attempt = 0; attempt < 3; attempt++)
+        {
+            var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", requestContent);
+            response.EnsureSuccessStatusCode();
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            try
+            {
+                var parsedJson = JObject.Parse(responseBody);
+
+                var messageContent = parsedJson["choices"][0]["message"]["content"].ToString();
+
+                var resultJson = JObject.Parse(messageContent);
+                return resultJson.ToString();
+            }
+            catch (Exception)
+            {
+                if (attempt < 3 - 1)
+                {
+                    await Task.Delay(1000);
+                }
+                else
+                {
+                    throw new Exception("Failed to get a valid Graph Data for Aanalysis after multiple attempts. Try Again Later");
+                }
+            }
+        }
+
+        return null;
     }
 
     public async Task<string> GetSources(string lang, string codeSnippet)
@@ -164,7 +219,7 @@ public class CodeAnalysisTool
                     "    }\n" +
                     "  },\n" +
                     "  \"books\":[\"[Book Title 1]\", \"[Book Title 2]\", \"[Book Title 3]\"],\n" +
-                    "  \"Why Students should follow this\":\"[Reasons for students to follow these sources]\"\n" 
+                    "  \"Why Students should follow this\":\"[Reasons for students to follow these sources]\"\n"
                    }
             },
             max_tokens = 1000
@@ -175,9 +230,35 @@ public class CodeAnalysisTool
         var requestContent = new StringContent(json, Encoding.UTF8, "application/json");
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
 
-        var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", requestContent);
-        response.EnsureSuccessStatusCode();
-        return await response.Content.ReadAsStringAsync();
+        for (int attempt = 0; attempt < 3; attempt++)
+        {
+            var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", requestContent);
+            response.EnsureSuccessStatusCode();
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            try
+            {
+                var parsedJson = JObject.Parse(responseBody);
+
+                var messageContent = parsedJson["choices"][0]["message"]["content"].ToString();
+
+                var resultJson = JObject.Parse(messageContent);
+                return resultJson.ToString();
+            }
+            catch (Exception)
+            {
+                if (attempt < 3 - 1)
+                {
+                    await Task.Delay(1000);
+                }
+                else
+                {
+                    throw new Exception("Failed to get a valid References for Aanalysis after multiple attempts. Try Again Later");
+                }
+            }
+        }
+        return null;
     }
 
 }

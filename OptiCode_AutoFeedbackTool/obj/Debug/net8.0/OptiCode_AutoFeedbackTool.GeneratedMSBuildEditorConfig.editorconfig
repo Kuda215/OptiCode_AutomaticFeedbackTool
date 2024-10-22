@@ -1,12 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
+build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnforceExtendedAnalyzerRules = 
 build_property.RootNamespace = OptiCode_AutoFeedbackTool
 build_property.RootNamespace = OptiCode_AutoFeedbackTool
 build_property.ProjectDir = C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\
@@ -168,6 +175,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/NewestSource/OptiCode_AutomaticFeedbackTool/OptiCode_AutoFeedbackTool/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NewestSource/OptiCode_AutomaticFeedbackTool/OptiCode_AutoFeedbackTool/Components/Pages/CodeSubmission.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb2RlU3VibWlzc2lvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/NewestSource/OptiCode_AutomaticFeedbackTool/OptiCode_AutoFeedbackTool/Components/Pages/Error.razor]

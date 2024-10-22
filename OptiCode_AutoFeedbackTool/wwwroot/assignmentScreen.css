@@ -1,0 +1,171 @@
+﻿.customHeader {
+    color: #1f3c59;
+    font-weight: bold;
+}
+
+
+.problem_class {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 82vw;
+    height: 42vh;
+    margin-top: 5vh;
+
+}
+
+.results{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 82vw;
+    height: 42vh;
+    margin-top: 5vh;
+}
+
+/* Full-screen overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Loader container */
+.loader {
+    text-align: center;
+}
+
+/* Spinner styling */
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-top: 8px solid white;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loading text styling */
+.loading-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+
+/* Modal Styling*/
+/* Add this to your site CSS file */
+.modal {
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Sit on top */
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.35); /* Black w/ opacity */
+    justify-content: center; /* Aligns horizontally */
+    align-items: center;
+    padding: 5vh 45vh;
+}
+
+.progressBarModal {
+    z-index: 1010; /* Sit on top */
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    top:0;
+    right: 0;
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.35); /* Black w/ opacity */
+    justify-content: center; /* Aligns horizontally */
+    align-items: center;
+    padding: 5vh 45vh;
+}
+
+.modal-appbar{
+    height: 6vh;
+    width: 100%;
+    background-color: #1f3c59;
+    color: white;
+    font-size: 14px;
+    justify-content: center;
+    padding:1vh
+}
+
+.modal-content {
+    background-color: #fefefe;
+    justify-self: center; /* Aligns horizontally */
+    align-self: center;
+    border: 1px solid #808080;
+    width: 45vw;
+    height: 90vh;
+}
+
+.reportViewer{
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    height:90vh;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.downloadtext{
+    color:aqua;
+}
+
+.modal-appbar {
+    flex-direction: row;
+}
+
+/*progress BAR
+*/
+.progress-container {
+    width: 60vw;
+    background-color: #fff; 
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 4vh;
+}
+
+.progress-bar {
+    background-color: #1f3c59; /* Green color for progress */
+    height: 30px;
+    color: white;
+    text-align: center;
+    line-height: 30px; /* Center text vertically */
+    font-size: 16px;
+    transition: width 0.5s ease; /* Smooth transition for progress */
+}

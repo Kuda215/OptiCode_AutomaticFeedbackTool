@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "OptiCode_AutoFeedbackTool.Client",
   "resources": {
-    "hash": "sha256-sPwnTJdUnjf1lAXPCBEZcwDNmeIRCdYO6YX7Gdc11DI=",
+    "hash": "sha256-AGIQnbihUbgWbdPxAGxKb27efHn5jC6ABFMrmgzmEvU=",
     "jsModuleNative": {
       "dotnet.native.8.0.2.zsbqib1yvb.js": "sha256-gPMK16QWoJSTxorlZJqcVtbBRTniIQWlLsJN2O4cJHg="
     },
@@ -210,10 +210,10 @@
       "mscorlib.wasm": "sha256-OH3kXneWqQMz6CUSo6POZqIeMqn9+5RR+IgHn5TnIwA=",
       "netstandard.wasm": "sha256-ZOswxXEbR2TmqjpbaBEdgr85Bv1NC4GwOwoJ+oxXM3M=",
       "System.Private.CoreLib.wasm": "sha256-I2w0iHf5nvSQyF1YE1VbgdTzmmz6a4OE6J7vo5wFa/4=",
-      "OptiCode_AutoFeedbackTool.Client.wasm": "sha256-M3Eh4shDSeyGHHOZV4wijRnP96NJGC5w1uK8v50RkhA="
+      "OptiCode_AutoFeedbackTool.Client.wasm": "sha256-qRFduXkhpUa4DFvbUbkrsBXT9CnTCWBQrSAXQiWOJlY="
     },
     "pdb": {
-      "OptiCode_AutoFeedbackTool.Client.pdb": "sha256-dQtnJm6m88lA24Rvb9h1PDp63CuFSBB8YQdgUsS081o="
+      "OptiCode_AutoFeedbackTool.Client.pdb": "sha256-DEQKDUZ20HCXy0gfoPbk5I0g0OwTJUxYfFhxp3FEQQg="
     }
   },
   "cacheBootResources": true,

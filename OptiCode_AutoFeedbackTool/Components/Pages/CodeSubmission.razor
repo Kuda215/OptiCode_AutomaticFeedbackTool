@@ -1,0 +1,417 @@
+﻿@page "/submitAssignment"
+
+@inject PistonService PistonService
+@using Newtonsoft.Json.Linq;
+@using FastReport;
+@using FastReport.Utils
+@using FastReport.Preview
+@inject IWebHostEnvironment env
+
+
+<div class="submission">
+    <h2>Submit Your Assignment</h2>
+
+    @if (!submitted)
+    {
+        <EditForm Model="@assignment" OnValidSubmit="HandleValidSubmit" id="formSubmit" FormName="CodeSubmission" >
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for="file">Upload Your File</label>
+                <InputFile id="file" class="form-control" OnChange="HandleFileUpload_" />
+            </div>
+
+            <div class="form-group">
+                <label for="code">Paste Your Code</label>
+                <div id="code" class="form-control" style="height: 30vh; color: darkgray; width: 40vw;">
+                    @assignment.Code
+                </div>
+                <div/>
+            </div>
+           
+            <button type="submit"  class="btn btn-success">Submit Assignment</button>
+        </EditForm>
+    }
+
+    @if (submitted)
+    {
+        <div class="results">
+            <h5>Execution Result</h5>
+            <pre>@output</pre>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(ReportHtml))
+    {
+        <div class="modal" style="display:block;">
+            <div class="modal-content">
+                <div class="modal-appbar">
+                    <p class="close" ><span><p class="downloadtext" @onclick="CloseReportPreview"> Download</p></span><span @onclick="CloseReportPreview">&times;</span></p>
+                    
+                    <h3>Report Preview</h3>
+                </div>
+                <div class="reportViewer">
+                <iframe src="@ReportHtml" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    }
+
+    @if (loading == true)
+    {
+        <div class="progress-container">
+            <div class="progress-bar" style="width:@progressPercentage">
+               Loading...(Step @progress of @totalSteps)
+            </div>
+        </div>
+    }
+
+</div>
+
+@code {
+    private bool submitted = false;
+    private bool loading = false;
+    private string output;
+    private IBrowserFile uploadedFile;
+    private Assignment assignment = new Assignment();
+    Report theReport = new Report();
+    private string ReportHtml;
+    private int progress = 0;
+    private int totalSteps = 8;
+    public double progressPercentage = 0;
+
+    [Microsoft.AspNetCore.Components.Parameter]
+    public string? FormName { get; set; }
+
+    private async Task HandleFileUpload_(InputFileChangeEventArgs e)
+    {
+        uploadedFile = e.File;
+        assignment.FileName = uploadedFile.Name;
+    }
+
+
+    private void CloseReportPreview()
+    {
+        ReportHtml = null; // Hide the modal
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        loading = true;
+
+        assignment.SubmissionDate = DateTime.Now;
+
+        if (uploadedFile != null)
+        {
+            using (var stream = uploadedFile.OpenReadStream())
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    var code = await reader.ReadToEndAsync();
+                    assignment.Code = code;
+                    await SubmitCodeToPiston(assignment.Code, "java", "11");
+                    return;
+                }
+            }
+        }
+        else if (!string.IsNullOrWhiteSpace(assignment.Code))
+        {
+            await SubmitCodeToPiston(assignment.Code, "java", "11");
+            return;
+        }
+
+        submitted = true;
+        output += "Unable to Read File.";
+    }
+
+
+    private async Task IncrementProgress() // Increment the progress value
+    {
+        if (progress < totalSteps)
+        {
+            progress++; 
+        }
+
+        await GetProgressBarWidth();
+        StateHasChanged();
+    }
+
+    private async Task GetProgressBarWidth()
+    {
+        // Calculate the width in percentage based on the current progress
+        double _progressPercentage = ((double)progress / totalSteps) * 60;
+        progressPercentage = _progressPercentage;
+    }
+
+    private async Task SubmitCodeToPiston(string sourceCode, string language, string version)
+    {
+        try
+        {
+            loading = true;
+
+            var output_json = await PistonService.ExecuteCodeAsync("java", sourceCode);
+            await IncrementProgress(); //1
+            var execution_json = JObject.Parse(output_json);
+
+            string stderr = execution_json["run"]["stderr"]?.ToString()  ?? "";
+
+            //if Error to execute
+            bool isError = !string.IsNullOrEmpty(stderr);
+
+            if (isError == false)
+            {
+                CodeAnalysisTool codeAnalysisTool = new CodeAnalysisTool();
+
+                //Summary
+                string reportContent_Summary = await codeAnalysisTool.GetSummary(sourceCode, "java") ?? "";
+                await IncrementProgress(); //2
+
+                var jsonObject_summary = JObject.Parse(reportContent_Summary);
+                var content_summary = jsonObject_summary.ToString();
+                var analysis_summary = new JObject();
+                analysis_summary = JObject.Parse(content_summary);
+
+                if (analysis_summary != null)
+                {
+                    var summary = analysis_summary["summary"] !=null ? analysis_summary["summary"] : (analysis_summary["overall"] != null ? analysis_summary : "");
+
+                    var overallScore = summary["overall"]["score"].ToString();
+
+                    var duplicateCode = ExtractCriterion(summary["duplicate_code"]);
+                    var complexity = ExtractCriterion(summary["overall_complexity"]);
+                    var codeReadability = ExtractCriterion(summary["code_readibility"]);
+                    var code_structure = ExtractCriterion(summary["code_structure"]);
+                    var maintainability = ExtractCriterion(summary["maintainability"]);
+                    var data_structure_choice = ExtractCriterion(summary["data_structure_choice"]);
+                    var commentCoverage = ExtractCriterion(summary["comment_coverage"]);
+                    var error_handling = ExtractCriterion(summary["error_handling"]);
+                    var adherenceToCodingStandards = ExtractCriterion(summary["adherence_to_coding_standards"]);
+                }
+
+                await IncrementProgress(); //3
+
+                //Graphs
+                string reportContent_Graphs = await codeAnalysisTool.GetGraphs(sourceCode, "java") ?? "";
+
+                var jsonObject_Graphs = JObject.Parse(reportContent_Graphs);
+                var content_Graphs = jsonObject_Graphs.ToString();
+                var analysis_Graphs = new JObject();
+                analysis_Graphs = JObject.Parse(content_Graphs);
+                await IncrementProgress(); //4
+
+                if (analysis_Graphs != null)
+                {
+                    var summary = analysis_Graphs["graphs"];
+                    var graph1 = summary["graph1"];
+                    var graph2 = summary["graph2"];
+                    var graph3 = summary["graph3"];
+                    var graph4 = summary["graph4"];
+                    var graph5 = summary["graph5"];
+
+                    GraphData graphs = new GraphData();
+
+                    graphs.ProgressOverTime_graph =
+                        new Graph(
+                            graph1["type"].ToString(), graph1["title"].ToString(), graph1["y-title"].ToString(), 
+                            graph1["x-title"].ToString(), graph1["y-axis"].Select(value => Convert.ToDouble(value)).ToList(),
+                            graph1["y-axis"].Select(value => Convert.ToString(value)).ToList(), graph1["bottom_text"].ToString(),
+                            graph1["data-point-labels"].Select(value => Convert.ToString(value)).ToList()
+                       );
+
+                    graphs.CommonIssuesFreq_graph =
+                        new Graph(
+                            graph2["type"].ToString(), graph2["title"].ToString(), graph2["y-title"].ToString(), 
+                            graph2["x-title"].ToString(), graph2["y-axis"].Select(value => Convert.ToDouble(value)).ToList(),
+                            graph2["y-axis"].Select(value => Convert.ToString(value)).ToList(), graph2["bottom_text"].ToString(),
+                            graph2["data-point-labels"].Select(value => Convert.ToString(value)).ToList()
+                       );
+
+                    graphs.TimeComplexityAnalysis_graph =
+                        new Graph(
+                            graph3["type"].ToString(), graph3["title"].ToString(), graph3["y-title"].ToString(), 
+                            graph3["x-title"].ToString(), graph3["y-axis"].Select(value => Convert.ToDouble(value)).ToList(),
+                            graph3["y-axis"].Select(value => Convert.ToString(value)).ToList(), graph3["bottom_text"].ToString(),
+                            graph3["data-point-labels"].Select(value => Convert.ToString(value)).ToList()
+                       );
+
+                    graphs.LearningCurve_graph =
+                        new Graph(
+                            graph4["type"].ToString(), graph4["title"].ToString(), graph4["y-title"].ToString(), 
+                            graph4["x-title"].ToString(), graph4["y-axis"].Select(value => Convert.ToDouble(value)).ToList(),
+                            graph4["y-axis"].Select(value => Convert.ToString(value)).ToList(), graph4["bottom_text"].ToString(),
+                            graph4["data-point-labels"].Select(value => Convert.ToString(value)).ToList()
+                       ); 
+
+                    graphs.FutureUsageAnalysis_graph =
+                        new Graph(
+                            graph5["type"].ToString(), graph5["title"].ToString(), graph5["y-title"].ToString(), 
+                            graph5["x-title"].ToString(), graph5["y-axis"].Select(value => Convert.ToDouble(value)).ToList(),
+                            graph5["y-axis"].Select(value => Convert.ToString(value)).ToList(), graph5["bottom_text"].ToString(),
+                            graph5["data-point-labels"].Select(value => Convert.ToString(value)).ToList()
+                       );
+                }
+                await IncrementProgress(); //5
+
+                //Sources
+                string reportContent_Sources = await codeAnalysisTool.GetSources(sourceCode, "java") ?? "";
+                await IncrementProgress(); //6
+
+                var jsonObject_Sources = JObject.Parse(reportContent_Sources);
+                var content_Sources = jsonObject_Sources.ToString();
+                var analysis_Sources = new JObject();
+                analysis_Sources = JObject.Parse(content_Sources);
+
+                if (analysis_Sources != null)
+                {
+                    var summary = analysis_Sources["sites"];
+                    var site1 = summary["site1"];
+                    var site2 = summary["site2"];
+                    var site3 = summary["site3"];
+
+                    Site siteObj = new Site();
+                    siteObj.Name = site1["name"].ToString();
+                    siteObj.Url = site1["url"].ToString();
+                    siteObj.KeyFindings = site1["Key Findings"].ToString();
+
+                    Site siteObj2 = new Site();
+                    siteObj2.Name = site2["name"].ToString();
+                    siteObj2.Url = site2["url"].ToString();
+                    siteObj2.KeyFindings = site2["Key Findings"].ToString();
+
+                    Site siteObj3 = new Site();
+                    siteObj3.Name = site3["name"].ToString();
+                    siteObj3.Url = site3["url"].ToString();
+                    siteObj3.KeyFindings = site3["Key Findings"].ToString();
+                }
+                await IncrementProgress(); //7
+                string path = "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Reports\\FeedBackTool_Report.frx";
+
+                theReport.Load(path);
+
+                // theReport.RegisterData
+                await IncrementProgress(); //8
+                loading = false;
+
+                theReport.Prepare();
+                using (var stream = new MemoryStream())
+                {
+                    var htmlExport = new FastReport.Export.Html.HTMLExport();
+                    theReport.Export(htmlExport, stream);
+                    stream.Position = 0;
+
+                    string base64Html = Convert.ToBase64String(stream.ToArray());
+                    string htmlFile = $"data:text/html;base64,{base64Html}";
+
+                    ReportHtml = htmlFile;
+                }
+            }
+            else
+            {
+                output = "Code Excecution Failed. \r\n"+stderr;
+                loading = false;
+
+            }
+        }
+        catch (Exception ex)
+        {
+
+            output = $"Error: {ex.Message}";
+            loading = false;
+
+        }
+
+    }
+
+    public class CodeAnalysis
+    {
+        public string OverallScore { get; set; }
+        public Criterion DuplicateCode { get; set; }
+        public Criterion Complexity { get; set; }
+        public Criterion CodeReadability { get; set; }
+        public Criterion Efficiency { get; set; }
+        public Criterion Maintainability { get; set; }
+        public Criterion CommentCoverage { get; set; }
+        public Criterion AdherenceToCodingStandards { get; set; }
+        public Criterion Performance { get; set; }
+    }
+
+    public class Criterion
+    {
+        public string Score { get; set; }
+        public string Justification { get; set; }
+        public List<Instance> Instances { get; set; }
+    }
+
+    public class Instance
+    {
+        public string Code { get; set; }
+        public string InsteadOf { get; set; }
+    }
+
+    private static Criterion ExtractCriterion(JToken criterion)
+    {
+        if (criterion != null)
+        {
+            return new Criterion
+                {
+                    Score = criterion["score"] != null ? criterion["score"].ToString() : "",
+                    Justification = criterion["justification"] != null ? criterion["justification"].ToString() : "",
+                    Instances = criterion["instances"] != null
+                            ? criterion["instances"].ToObject<List<Instance>>()
+                            : new List<Instance>() // Initialize to an empty list if it doesn't exist
+                };
+        }
+        else
+        {
+            return new Criterion
+                {
+                    Score = "",
+                    Justification = "",
+                    Instances =  new List<Instance>()
+                };
+        }
+    }
+
+    public class GraphData
+    {
+        public Graph ProgressOverTime_graph { get; set; }
+        public Graph CommonIssuesFreq_graph { get; set; }
+        public Graph TimeComplexityAnalysis_graph { get; set; }
+        public Graph LearningCurve_graph { get; set; }
+        public Graph FutureUsageAnalysis_graph { get; set; }
+    }
+
+    public class Graph
+    {
+        public string Type { get; set; }           // Type of the graph (e.g., "line-graph", "bar-graph", etc.)
+        public string Title { get; set; }          // Title of the graph
+        public string YTitle { get; set; }         // Y-axis title
+        public string XTitle { get; set; }         // X-axis title
+        public List<double> YAxis { get; set; }    // Values for the Y-axis
+        public List<string> XAxis { get; set; }    // Labels for the X-axis
+        public string BottomText { get; set; }     // Additional text for the bottom of the graph
+        public List<string> DataPointLabels { get; set; }    // Labels for the X-axis
+
+        public Graph(string type, string title, string yTitle, string xTitle, List<double> yAxis, List<string> xAxis, string bottomText, List<string> dataPointLabels)
+        {
+            Type = type;
+            Title = title;
+            YTitle = yTitle;
+            XTitle = xTitle;
+            YAxis = yAxis;
+            XAxis = xAxis;
+            BottomText = bottomText;
+            DataPointLabels = dataPointLabels;
+        }
+    }
+
+    public class Site
+    {
+        public string Url { get; set; }
+        public string Name { get; set; }
+        public string KeyFindings { get; set; }
+    }
+
+
+}

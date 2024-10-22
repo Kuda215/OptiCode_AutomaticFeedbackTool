@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "y+l1sYXbZSOO9rh3KiiXPwitJUeFtZppNmhJct8UX7Y=",
+  "Hash": "k1OVrqnop4KL9DrhNNq3brmfjHt6oKOdzeR+SRezIZM=",
   "Source": "OptiCode_AutoFeedbackTool",
   "BasePath": "_content/OptiCode_AutoFeedbackTool",
   "Mode": "Default",
@@ -7957,6 +7957,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
+    },
+    {
+      "Identity": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\assignmentScreen.css",
+      "SourceId": "OptiCode_AutoFeedbackTool",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\",
+      "BasePath": "_content/OptiCode_AutoFeedbackTool",
+      "RelativePath": "assignmentScreen.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assignmentScreen.css"
     },
     {
       "Identity": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\bootstrap\\bootstrap.min.css",
