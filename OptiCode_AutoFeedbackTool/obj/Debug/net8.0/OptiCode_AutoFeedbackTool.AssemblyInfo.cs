@@ -11,11 +11,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-OptiCode_AutoFeedbackTool-72ca93ba-de78-42a4-b9c0-ca0307b1ad91")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("OptiCode_AutoFeedbackTool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7584af4d8d719da8d025d6f265f03fc9b496b65")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdcf5b4d2138db2f046f0d851f84238d0735d246")]
 [assembly: System.Reflection.AssemblyProductAttribute("OptiCode_AutoFeedbackTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OptiCode_AutoFeedbackTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,68 +6,79 @@
 @using FastReport.Utils
 @using FastReport.Preview
 @inject IWebHostEnvironment env
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using System.Security.Claims
+@using OptiCode_AutoFeedbackTool.Data
+@inject ApplicationDbContext DbContext
+@using Microsoft.EntityFrameworkCore
 
+@if (user != null)
+{
+    <div class="submission">
+        <h2>Submit Your Assignment</h2>
 
-<div class="submission">
-    <h2>Submit Your Assignment</h2>
+        @if (!submitted)
+        {
+            <EditForm Model="@assignment" OnValidSubmit="HandleValidSubmit" id="formSubmit" FormName="CodeSubmission" >
+                <DataAnnotationsValidator />
+                <ValidationSummary />
 
-    @if (!submitted)
-    {
-        <EditForm Model="@assignment" OnValidSubmit="HandleValidSubmit" id="formSubmit" FormName="CodeSubmission" >
-            <DataAnnotationsValidator />
-            <ValidationSummary />
-
-            <div class="form-group">
-                <label for="file">Upload Your File</label>
-                <InputFile id="file" class="form-control" OnChange="HandleFileUpload_" />
-            </div>
-
-            <div class="form-group">
-                <label for="code">Paste Your Code</label>
-                <div id="code" class="form-control" style="height: 30vh; color: darkgray; width: 40vw;">
-                    @assignment.Code
+                <div class="form-group">
+                    <label for="file">Upload Your File</label>
+                    <InputFile id="file" class="form-control" OnChange="HandleFileUpload_" />
                 </div>
-                <div/>
-            </div>
+
+                <div class="form-group">
+                    <label for="code">Paste Your Code</label>
+                    <div id="code" class="form-control" style="height: 30vh; color: darkgray; width: 40vw;">
+                        @assignment.Code
+                    </div>
+                    <div/>
+                </div>
            
-            <button type="submit"  class="btn btn-success">Submit Assignment</button>
-        </EditForm>
-    }
+                <button type="submit"  class="btn btn-success">Submit Assignment</button>
+            </EditForm>
+        }
 
-    @if (submitted)
-    {
-        <div class="results">
-            <h5>Execution Result</h5>
-            <pre>@output</pre>
-        </div>
-    }
+        @if (submitted)
+        {
+            <div class="results">
+                <h5>Execution Result</h5>
+                <pre>@output</pre>
+            </div>
+        }
 
-    @if (!string.IsNullOrEmpty(ReportHtml))
-    {
-        <div class="modal" style="display:block;">
-            <div class="modal-content">
-                <div class="modal-appbar">
-                    <p class="close" ><span><p class="downloadtext" @onclick="CloseReportPreview"> Download</p></span><span @onclick="CloseReportPreview">&times;</span></p>
+        @if (!string.IsNullOrEmpty(ReportHtml))
+        {
+            <div class="modal" style="display:block;">
+                <div class="modal-content">
+                    <div class="modal-appbar">
+                        <p class="close" ><span><p class="downloadtext" @onclick="CloseReportPreview"> Download</p></span><span @onclick="CloseReportPreview">&times;</span></p>
                     
-                    <h3>Report Preview</h3>
-                </div>
-                <div class="reportViewer">
-                <iframe src="@ReportHtml" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+                        <h3>Report Preview</h3>
+                    </div>
+                    <div class="reportViewer">
+                    <iframe src="@ReportHtml" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
 
-    @if (loading == true)
-    {
-        <div class="progress-container">
-            <div class="progress-bar" style="width:@progressPercentage">
-               Loading...(Step @progress of @totalSteps)
+        @if (loading == true)
+        {
+            <div class="progress-container">
+                <div class="progress-bar" style="width:@progressPercentage">
+                   Loading...(Step @progress of @totalSteps)
+                </div>
             </div>
-        </div>
-    }
+        }
 
-</div>
+    </div>
+}
+else
+{
+    <h3>User Not Authenticated.</h3>
+}
 
 @code {
     private bool submitted = false;
@@ -80,9 +91,13 @@
     private int progress = 0;
     private int totalSteps = 8;
     public double progressPercentage = 0;
-
+    private ApplicationUser user;
     [Microsoft.AspNetCore.Components.Parameter]
+    public bool userAuth { get; set; } = false;
     public string? FormName { get; set; }
+    public string Name  { get; set; }
+    public string FullName  { get; set; }
+    private IEnumerable<string> userRoles;
 
     private async Task HandleFileUpload_(InputFileChangeEventArgs e)
     {
@@ -91,10 +106,26 @@
     }
 
 
-    private void CloseReportPreview()
+    protected override async Task OnInitializedAsync()
     {
-        ReportHtml = null; // Hide the modal
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var userId = authState.User?.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+
+        if (userId != null)
+        {
+            userAuth = true;
+
+            user = await DbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            Name = user.FirstName;
+            FullName = Name + " " + user.Surname + " " + user.StudentNumber;
+        }
+        else
+        {
+            userAuth = false;
+        }
     }
+
+    private void CloseReportPreview() => ReportHtml = null; // Hide the modal
 
     private async Task HandleValidSubmit()
     {
@@ -270,24 +301,36 @@
                     var site3 = summary["site3"];
 
                     Site siteObj = new Site();
-                    siteObj.Name = site1["name"].ToString();
-                    siteObj.Url = site1["url"].ToString();
-                    siteObj.KeyFindings = site1["Key Findings"].ToString();
+                    if (site1 != null)
+                    {
+                        siteObj.Name = site1["name"].ToString();
+                        siteObj.Url = site1["url"].ToString();
+                        siteObj.KeyFindings = site1["Key Findings"].ToString();
+                    }
 
                     Site siteObj2 = new Site();
-                    siteObj2.Name = site2["name"].ToString();
-                    siteObj2.Url = site2["url"].ToString();
-                    siteObj2.KeyFindings = site2["Key Findings"].ToString();
+                    if (site2 != null)
+                    {
+                        siteObj2.Name = site2["name"].ToString();
+                        siteObj2.Url = site2["url"].ToString();
+                        siteObj2.KeyFindings = site2["Key Findings"].ToString();
+                    }
 
                     Site siteObj3 = new Site();
-                    siteObj3.Name = site3["name"].ToString();
-                    siteObj3.Url = site3["url"].ToString();
-                    siteObj3.KeyFindings = site3["Key Findings"].ToString();
+                    if(site3 != null)
+                    {
+                        siteObj3.Name = site3["name"].ToString();
+                        siteObj3.Url = site3["url"].ToString();
+                        siteObj3.KeyFindings = site3["Key Findings"].ToString();
+                    }
                 }
                 await IncrementProgress(); //7
                 string path = "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Reports\\FeedBackTool_Report.frx";
 
                 theReport.Load(path);
+
+                theReport.SetParameterValue("FirstName", Name);
+                theReport.SetParameterValue("FullName", FullName);
 
                 // theReport.RegisterData
                 await IncrementProgress(); //8

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="01/20/2011 11:23:14" ReportInfo.Modified="10/22/2024 02:40:36" ReportInfo.CreatorVersion="2019.1.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/20/2011 11:23:14" ReportInfo.Modified="10/29/2024 23:27:24" ReportInfo.CreatorVersion="2019.1.0.0">
   <ScriptText>using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,12 +27,9 @@ namespace FastReport
 }
 </ScriptText>
   <Dictionary>
-    <Parameter Name="Banner" DataType="System.String"/>
-    <Parameter Name="TheDate" DataType="System.DateTime"/>
-    <Parameter Name="TheShaft" DataType="System.String" Expression="&quot;Shaft Manager 3#&quot;"/>
-    <Parameter Name="theDate" DataType="System.String"/>
-    <Parameter Name="logo" DataType="System.String"/>
-    <Parameter Name="logoMineware" DataType="System.String"/>
+    <Parameter Name="FirstName" DataType="System.String"/>
+    <Parameter Name="FullName" DataType="System.String"/>
+    <Parameter Name="ModuleName" DataType="System.String"/>
   </Dictionary>
   <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" MirrorMargins="true" FirstPageSource="15" OtherPagesSource="15">
     <PageHeaderBand Name="PageHeader1" Width="793.8" Height="141.75" Fill.Color="DarkSlateGray" BeforePrintEvent="PageHeader1_BeforePrint">
@@ -68,11 +65,11 @@ namespace FastReport
       <ShapeObject Name="Shape3" Left="661.5" Top="207.9" Width="37.8" Height="28.35" Border.Color="LightYellow" Border.Style="Double" Border.Width="2" Fill.Color="Lime" Shape="Triangle"/>
       <LineObject Name="Line1" Left="529.2" Top="207.9" Width="-28.35" Height="-56.7" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Diagonal="true" EndCap.Style="Arrow"/>
       <LineObject Name="Line2" Left="623.7" Top="189" Height="-85.05" Border.Color="DarkGray" Border.Style="DashDotDot" Border.Width="0.5" Diagonal="true" EndCap.Style="Arrow"/>
-      <TextObject Name="Text33" Left="18.9" Top="113.4" Width="396.9" Height="18.9" Fill.Color="White" Text="Kudakwashe Chivunga - u19068752" VertAlign="Center" Font="Arial, 14pt" TextFill.Color="Silver"/>
+      <TextObject Name="Text33" Left="18.9" Top="113.4" Width="396.9" Height="18.9" Fill.Color="White" Text="[FullName]" VertAlign="Center" Font="Arial, 14pt" TextFill.Color="Silver"/>
       <TextObject Name="Text20" Left="699.3" Top="132.3" Width="94.5" Height="18.9" Text="Improvement" VertAlign="Center" TextFill.Color="Lime"/>
       <TextObject Name="Text37" Left="463.05" Top="122.85" Width="94.5" Height="18.9" Text="Improvement" VertAlign="Center" TextFill.Color="DarkSlateGray"/>
       <TextObject Name="Text36" Left="595.35" Top="56.7" Width="94.5" Height="18.9" Text="Improvement" VertAlign="Center" TextFill.Color="DarkSlateGray"/>
-      <TextObject Name="Text5" Left="94.5" Top="37.8" Width="255.15" Height="47.25" Text="Kuda!" Font="Comic Sans MS, 20pt" TextFill.Color="DarkSlateGray"/>
+      <TextObject Name="Text5" Left="94.5" Top="37.8" Width="255.15" Height="47.25" Text="[FirstName]" Font="Comic Sans MS, 20pt" TextFill.Color="DarkSlateGray"/>
       <TextObject Name="Text6" Left="9.45" Width="151.2" Height="75.6" Text="Hi" Font="Comic Sans MS, 48pt, style=Bold" TextFill.Color="249, 124, 0"/>
       <TextObject Name="Text77" Left="585.9" Top="226.8" Width="47.25" Height="47.25" Text="B" Font="Bahnschrift SemiBold Condensed, 36pt" TextFill.Color="White"/>
     </DataBand>

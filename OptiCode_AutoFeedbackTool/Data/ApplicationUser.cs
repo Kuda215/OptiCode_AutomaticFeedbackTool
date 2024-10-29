@@ -11,6 +11,10 @@ namespace OptiCode_AutoFeedbackTool.Data
         [MaxLength(15)]
         public string? Role { get; set; }
 
+        [Column("FirstName")]
+        [MaxLength(100)]
+        public string? FirstName { get; set; }
+
         [Column("Surname")]
         [MaxLength(100)]
         public string? Surname { get; set; }
@@ -24,6 +28,5 @@ namespace OptiCode_AutoFeedbackTool.Data
 
         [Column("LastLogin")]
         public DateTime? LastLogin { get; set; }
-
     }
 }
