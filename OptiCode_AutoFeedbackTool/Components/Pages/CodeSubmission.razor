@@ -108,6 +108,17 @@ else
     public string FullName  { get; set; }
     private IEnumerable<string> userRoles;
     private string ExecutionTime;
+    private static double ExecutionTime_d;
+    string progrmammingLanguage = "java";
+    string memoryUsage = "";
+    string AssRef = "";
+
+    int numberOfLines = 0;
+    int numberOfComments = 0;
+    int numberOfExternalDependencies = 0;
+    int numberOfFunctions = 0;
+
+    double inputSize = 0;
 
     private async Task HandleFileUpload_(InputFileChangeEventArgs e)
     {
@@ -198,32 +209,182 @@ else
         return ExecutionTime;
     }
 
+    private int CountNumberOfLines(string SourceCode)
+    {
+        int num = 0;
+
+        var lines = SourceCode.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+        num = lines.Count(line => !string.IsNullOrWhiteSpace(line));
+
+        return num;
+    }
+
+    private static string WrapJavaCodeWithMemoryTracking(string sourceCode)
+    {
+        // Find the indices of the second opening brace and the second-to-last closing brace
+        int firstBraceIndex = sourceCode.IndexOf('{');
+        int secondBraceIndex = sourceCode.IndexOf('{', firstBraceIndex + 1);
+        int secondLastBraceIndex = sourceCode.LastIndexOf('}', sourceCode.LastIndexOf('}'));
+
+        // Check if the indices are valid
+        if (secondBraceIndex >= 0 && secondLastBraceIndex > secondBraceIndex)
+        {
+            // Extract the user code
+            string userCode = sourceCode.Substring(secondBraceIndex + 1, secondLastBraceIndex - secondBraceIndex - 1).Trim();
+            userCode = userCode.TrimEnd().TrimEnd('}');
+            // Create the wrapped code
+            string wrappedCode = @"
+            public class Main {
+                public static void main(String[] args) {
+                    long startTime = System.currentTimeMillis();
+                    Runtime runtime = Runtime.getRuntime();
+                    runtime.gc(); // Run garbage collector
+                    long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
+
+                    try {
+                        // User's code begins here
+        " + userCode + @"
+                        // User's code ends here
+
+                        // Capture memory usage and execution time
+                        long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
+                        long executionTime = System.currentTimeMillis() - startTime;
+                        long memoryUsed = usedMemoryAfter - usedMemoryBefore;
+
+                        System.out.println(""Memory used: "" + memoryUsed + "" bytes"");
+                        System.out.println(""Execution time: "" + executionTime + "" ms"");
+                    } catch (Exception e) {
+                        System.out.println(""Error during execution: "" + e.getMessage());
+                    }
+                }
+            }
+        ";
+
+            return wrappedCode;
+        }
+
+        // If the braces aren't valid, return the original source code
+        return sourceCode;
+    }
+
+    //sourceCode = sourceCode.Replace("\n", " ").Replace("\r", " ");
+
+    // Declare global variables
+    private static long memoryUsed;
+
+    private static bool ExecuteAndMeasureJavaCode(string sourceCode)
+    {
+        // Generate a temporary Java file
+        string tempJavaFilePath = Path.Combine(Path.GetTempPath(), "Main.java");
+        File.WriteAllText(tempJavaFilePath, sourceCode);
+
+        try
+        {
+            // Step 1: Compile Java file
+            using (Process javac = new Process())
+            {
+                javac.StartInfo.FileName = "javac";
+                javac.StartInfo.Arguments = tempJavaFilePath;
+                javac.StartInfo.RedirectStandardOutput = true;
+                javac.StartInfo.RedirectStandardError = true;
+                javac.StartInfo.UseShellExecute = false;
+                javac.StartInfo.CreateNoWindow = true;
+                javac.StartInfo.StandardErrorEncoding = System.Text.Encoding.UTF8;
+                javac.StartInfo.StandardOutputEncoding = System.Text.Encoding.UTF8;
+
+                javac.Start();
+
+                string compileOutput = javac.StandardOutput.ReadToEnd();
+                string compileError = javac.StandardError.ReadToEnd();
+                javac.WaitForExit();
+
+                if (javac.ExitCode != 0)
+                {
+                    Console.WriteLine("Java compilation error:");
+                    Console.WriteLine(compileError);
+                    return false;
+                }
+            }
+
+            // Step 2: Execute the compiled Java class
+            string tempClassFilePath = Path.Combine(Path.GetTempPath(), "Main");
+
+            // Measure execution time and memory
+            GC.Collect(); // Run garbage collector
+            GC.WaitForPendingFinalizers(); // Wait for finalizers to complete
+            long usedMemoryBefore = GC.GetTotalMemory(true); // Measure memory before execution
+
+            long startTime = DateTime.Now.Ticks; // Measure time using Ticks
+
+            using (Process javaProcess = new Process())
+            {
+                javaProcess.StartInfo.FileName = "java";
+                javaProcess.StartInfo.Arguments = "-cp " + Path.GetTempPath() + " Main"; // Class name without .class
+                javaProcess.StartInfo.RedirectStandardOutput = true;
+                javaProcess.StartInfo.RedirectStandardError = true;
+                javaProcess.StartInfo.UseShellExecute = false;
+                javaProcess.StartInfo.CreateNoWindow = true;
+
+                javaProcess.Start();
+
+                string output = javaProcess.StandardOutput.ReadToEnd();
+                string error = javaProcess.StandardError.ReadToEnd();
+                javaProcess.WaitForExit();
+
+                long endTime = DateTime.Now.Ticks; // Measure end time
+
+                long usedMemoryAfter = GC.GetTotalMemory(true); // Measure memory after execution
+
+                // Calculate execution time and memory used
+                ExecutionTime_d = (endTime - startTime) / TimeSpan.TicksPerMillisecond; // Convert ticks to milliseconds
+                memoryUsed = usedMemoryAfter - usedMemoryBefore; // Calculate memory used
+
+                Console.WriteLine(output);
+                if (javaProcess.ExitCode != 0)
+                {
+                    Console.WriteLine("Java execution error:");
+                    Console.WriteLine(error);
+                    return false;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred during Java execution:");
+            Console.WriteLine(ex.Message);
+            return false;
+        }
+        finally
+        {
+            // Cleanup
+            if (File.Exists(tempJavaFilePath)) File.Delete(tempJavaFilePath);
+            string tempClassFilePath = Path.Combine(Path.GetTempPath(), "Main.class");
+            if (File.Exists(tempClassFilePath)) File.Delete(tempClassFilePath);
+        }
+
+        return true;
+    }
+
     private async Task SubmitCodeToPiston(string sourceCode, string language, string version)
     {
+        
         try
         {
             loading = true;
-            var stopwatch = Stopwatch.StartNew();
 
             //=========================== Code Execution =================================//
-            var output_json = await PistonService.ExecuteCodeAsync("java", sourceCode);
-            await Task.Delay(5345); 
-            stopwatch.Stop();
-
-            string executionTime = ConvertExecutionTimeToString(stopwatch);
+            string wrappedJavaCode = WrapJavaCodeWithMemoryTracking(sourceCode);
             await IncrementProgress(); //1/8
 
+            bool isError = ExecuteAndMeasureJavaCode(wrappedJavaCode);
 
-            var execution_json = JObject.Parse(output_json);
-            string stderr = execution_json["run"]["stderr"]?.ToString()  ?? "";
-            bool isError = !string.IsNullOrEmpty(stderr);
-
-            if (isError == false)
+            if (isError == true)
             {
                 CodeAnalysisTool codeAnalysisTool = new CodeAnalysisTool();
 
                 //=========================== Summary Analysis =================================//
 
+                numberOfLines = CountNumberOfLines(sourceCode);
                 string reportContent_Summary = await codeAnalysisTool.GetSummary(sourceCode, "java") ?? "";
                 await IncrementProgress(); //2
 
@@ -382,7 +543,7 @@ else
             }
             else
             {
-                output = "Code Excecution Failed. \r\n"+stderr;
+                output = "Code Excecution Failed. \r\n";
                 loading = false;
 
             }
