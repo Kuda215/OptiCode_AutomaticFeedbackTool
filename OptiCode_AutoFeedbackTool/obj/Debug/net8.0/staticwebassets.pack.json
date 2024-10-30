@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\OptiCode_AutoFeedbackTool.bundle.scp.css"
     },
     {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\JS\\chart.js",
+      "PackagePath": "staticwebassets\\JS\\chart.js"
+    },
+    {
       "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
@@ -23,6 +27,14 @@
     {
       "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\img\\frontGraph.png",
+      "PackagePath": "staticwebassets\\img\\frontGraph.png"
+    },
+    {
+      "Id": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\wwwroot\\reports\\report.pdf",
+      "PackagePath": "staticwebassets\\reports\\report.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.OptiCode_AutoFeedbackTool.Microsoft.AspNetCore.StaticWebAssets.props",
