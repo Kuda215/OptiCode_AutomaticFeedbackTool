@@ -192,3 +192,4 @@ C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\bin\Deb
 C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\obj\Debug\net8.0\OptiCode_AutoFeedbackTool.MvcApplicationPartsAssemblyInfo.cs
+C:\NewestSource\OptiCode_AutomaticFeedbackTool\OptiCode_AutoFeedbackTool\bin\Debug\net8.0\FastReport.OpenSource.Export.PdfSimple.dll

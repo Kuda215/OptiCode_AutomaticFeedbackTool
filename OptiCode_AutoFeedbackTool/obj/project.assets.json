@@ -94,6 +94,18 @@
           "buildMultiTargeting/FastReport.OpenSource.props": {}
         }
       },
+      "FastReport.OpenSource.Export.PdfSimple/2025.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FastReport.OpenSource": "2025.1.0"
+        },
+        "compile": {
+          "lib/net6.0/FastReport.OpenSource.Export.PdfSimple.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/FastReport.OpenSource.Export.PdfSimple.dll": {}
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -2118,6 +2130,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "FastReport.OpenSource.Export.PdfSimple": "2025.1.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.2",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.2"
         },
@@ -2225,6 +2238,19 @@
         "lib/net6.0-windows7.0/FastReport.xml",
         "lib/net6.0/FastReport.dll",
         "lib/net6.0/FastReport.xml"
+      ]
+    },
+    "FastReport.OpenSource.Export.PdfSimple/2025.1.0": {
+      "sha512": "TtF6gEFjTqpMBxPmW2CwhAzTYvazkeOarDCLlP2+QtG33R9/5TsyYxZp7cTkyUNyRGpsRTYd+p9OFzyZtI1seA==",
+      "type": "package",
+      "path": "fastreport.opensource.export.pdfsimple/2025.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fastreport.opensource.export.pdfsimple.2025.1.0.nupkg.sha512",
+        "fastreport.opensource.export.pdfsimple.nuspec",
+        "lib/net462/FastReport.OpenSource.Export.PdfSimple.dll",
+        "lib/net6.0/FastReport.OpenSource.Export.PdfSimple.dll"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -5521,6 +5547,7 @@
     "net8.0": [
       "FastReport.DataVisualization >= 2025.1.0",
       "FastReport.OpenSource >= 2025.1.0",
+      "FastReport.OpenSource.Export.PdfSimple >= 2025.1.0",
       "Microsoft.AspNetCore.Components >= 8.0.10",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 8.0.2",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 8.0.2",
@@ -5603,6 +5630,10 @@
             "version": "[2025.1.0, )"
           },
           "FastReport.OpenSource": {
+            "target": "Package",
+            "version": "[2025.1.0, )"
+          },
+          "FastReport.OpenSource.Export.PdfSimple": {
             "target": "Package",
             "version": "[2025.1.0, )"
           },

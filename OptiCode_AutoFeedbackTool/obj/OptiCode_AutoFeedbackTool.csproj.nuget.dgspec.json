@@ -58,6 +58,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FastReport.OpenSource.Export.PdfSimple": {
+              "target": "Package",
+              "version": "[2025.1.0, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -173,6 +177,10 @@
               "version": "[2025.1.0, )"
             },
             "FastReport.OpenSource": {
+              "target": "Package",
+              "version": "[2025.1.0, )"
+            },
+            "FastReport.OpenSource.Export.PdfSimple": {
               "target": "Package",
               "version": "[2025.1.0, )"
             },

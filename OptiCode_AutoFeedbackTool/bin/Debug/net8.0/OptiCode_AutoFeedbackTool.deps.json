@@ -10,6 +10,7 @@
         "dependencies": {
           "FastReport.DataVisualization": "2025.1.0",
           "FastReport.OpenSource": "2025.1.0",
+          "FastReport.OpenSource.Export.PdfSimple": "2025.1.0",
           "Microsoft.AspNetCore.Components": "8.0.10",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.2",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.2",
@@ -89,6 +90,17 @@
         },
         "runtime": {
           "lib/net6.0/FastReport.dll": {
+            "assemblyVersion": "2025.1.0.0",
+            "fileVersion": "2025.1.0.0"
+          }
+        }
+      },
+      "FastReport.OpenSource.Export.PdfSimple/2025.1.0": {
+        "dependencies": {
+          "FastReport.OpenSource": "2025.1.0"
+        },
+        "runtime": {
+          "lib/net6.0/FastReport.OpenSource.Export.PdfSimple.dll": {
             "assemblyVersion": "2025.1.0.0",
             "fileVersion": "2025.1.0.0"
           }
@@ -1259,6 +1271,7 @@
       },
       "OptiCode_AutoFeedbackTool.Client/1.0.0": {
         "dependencies": {
+          "FastReport.OpenSource.Export.PdfSimple": "2025.1.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.2",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.2"
         },
@@ -1308,6 +1321,13 @@
       "sha512": "sha512-jV68OEJm4wHv1xok25solwL0Pyalul2NxnUplvoUOXUwOjscNqzVPM7KOemxBP4GqDQ4ZvARHTNs0wgXy1liGw==",
       "path": "fastreport.opensource/2025.1.0",
       "hashPath": "fastreport.opensource.2025.1.0.nupkg.sha512"
+    },
+    "FastReport.OpenSource.Export.PdfSimple/2025.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TtF6gEFjTqpMBxPmW2CwhAzTYvazkeOarDCLlP2+QtG33R9/5TsyYxZp7cTkyUNyRGpsRTYd+p9OFzyZtI1seA==",
+      "path": "fastreport.opensource.export.pdfsimple/2025.1.0",
+      "hashPath": "fastreport.opensource.export.pdfsimple.2025.1.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

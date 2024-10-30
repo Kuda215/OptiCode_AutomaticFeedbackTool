@@ -11,6 +11,7 @@
     <ProjectReference Include="..\OptiCode_AutoFeedbackTool.Client\OptiCode_AutoFeedbackTool.Client.csproj" />
     <PackageReference Include="FastReport.DataVisualization" Version="2025.1.0" />
     <PackageReference Include="FastReport.OpenSource" Version="2025.1.0" />
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2025.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.2" />

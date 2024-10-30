@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lXJMIoM2rveuR7ynrR0X8pzcAhH4oeJpGbWsSuoknRXoj4CO3aMm/coXX0juzxke8Fw+lFBwT//Ny9BEU+Fmzw==",
+  "dgSpecHash": "Re47Wo+7PUJizJZ5TzupHrNlsgCCSp3GMwk+ihDwkhdsIjzfUdSNWvt2qbq5HB7OdR7vf1MLFG4OuZe7K007FQ==",
   "success": true,
   "projectFilePath": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\fastreport.compat\\2025.1.0\\fastreport.compat.2025.1.0.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\fastreport.datavisualization\\2025.1.0\\fastreport.datavisualization.2025.1.0.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\fastreport.opensource\\2025.1.0\\fastreport.opensource.2025.1.0.nupkg.sha512",
+    "C:\\Users\\MinewareUser12\\.nuget\\packages\\fastreport.opensource.export.pdfsimple\\2025.1.0\\fastreport.opensource.export.pdfsimple.2025.1.0.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.10\\microsoft.aspnetcore.authorization.8.0.10.nupkg.sha512",
     "C:\\Users\\MinewareUser12\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.10\\microsoft.aspnetcore.components.8.0.10.nupkg.sha512",
