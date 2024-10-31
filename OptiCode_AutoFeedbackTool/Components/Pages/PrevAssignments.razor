@@ -1,0 +1,53 @@
+﻿@page "/prevAssignments"
+@inject AssignmentService AssignmentService
+
+<h3 style="color: #333; font-family: Arial, sans-serif; margin-bottom: 20px;">Assignments</h3>
+
+@if (Assignments == null)
+{
+    <p style="font-style: italic; color: gray;">Loading...</p>
+}
+else if (!Assignments.Any())
+{
+    <p style="font-style: italic; color: gray;">No assignments found.</p>
+}
+else
+{
+    <input type="text" placeholder="Search assignments..." @bind="searchQuery" style="margin-bottom: 10px; padding: 5px;" />
+
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: Arial, sans-serif;">
+        <thead>
+            <tr style="background-color: #f2f2f2; border-bottom: 2px solid #ddd;">
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Assignment #</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Topic</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Date</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Grade</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Download Report</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var assignment in Assignments)
+            {
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.AssignmentNumber</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.Topic</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.SubmissionDate.ToString("yyyy-MM-dd")</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.Grade</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                        <a href="@assignment.ReportUrl" target="_blank" style="text-decoration: none; padding: 5px 10px; color: white; background-color: #007bff; border-radius: 5px;">Download</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private string searchQuery = string.Empty;
+    private List<PrevAssignment> Assignments; 
+
+    protected override async Task OnInitializedAsync()
+    {
+        Assignments = await AssignmentService.GetAssignmentsAsync();
+    }
+}

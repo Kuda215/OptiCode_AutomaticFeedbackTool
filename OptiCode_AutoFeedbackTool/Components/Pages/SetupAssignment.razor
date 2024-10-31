@@ -1,0 +1,69 @@
+﻿@page "/setup-assignment"
+@inject SetUpAssignmentService AssignmentService
+@using System.ComponentModel.DataAnnotations
+
+<h3>Set Up Assignment</h3>
+
+<EditForm Model="assignment" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Assignment Title</label>
+        <InputText id="title" @bind-Value="assignment.Title" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="dueDate" class="form-label">Due Date</label>
+        <InputDate id="dueDate" @bind-Value="assignment.DueDate" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <InputTextArea id="description" @bind-Value="assignment.Description" class="form-control" required />
+    </div>
+
+    <div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; margin-top: 20px;">
+        <h5>Submission Requirements</h5>
+        <h8>Check For:</h8>
+        <div>
+            <input type="checkbox" id="bigO" @bind="assignment.Requirements.BigO" />
+            <label for="bigO">Complexity (BigO)</label>
+        </div>
+        <div>
+            <input type="checkbox" id="duplicateCode" @bind="assignment.Requirements.DuplicateCode" />
+            <label for="duplicateCode">Duplicate Code</label>
+        </div>
+        <div>
+            <input type="checkbox" id="errorHandling" @bind="assignment.Requirements.ErrorHandling" />
+            <label for="errorHandling">Proper Error Handling</label>
+        </div>
+        <div>
+            <input type="checkbox" id="codeClarity" @bind="assignment.Requirements.CodeClarity" />
+            <label for="codeClarity">Code Readability/Clarity</label>
+        </div>
+        <div>
+            <input type="checkbox" id="codeClarity" @bind="assignment.Requirements.CodeMantainability" />
+            <label for="codeClarity">Code Mantainability</label>
+        </div>
+        <div>
+            <input type="checkbox" id="unitTests" @bind="assignment.Requirements.UnitTests" />
+            <label for="unitTests">Include Unit Tests</label>
+        </div>
+        <div>
+            <input type="checkbox" id="documentation" @bind="assignment.Requirements.Documentation" />
+            <label for="documentation">Include Comments/Documentation</label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-top: 15px;">Save Assignment</button>
+</EditForm>
+
+@code {
+    private SetupAssignment_ assignment = new SetupAssignment_();
+
+    private async Task HandleValidSubmit()
+    {
+        await AssignmentService.SaveAssignmentAsync(assignment);
+    }
+}

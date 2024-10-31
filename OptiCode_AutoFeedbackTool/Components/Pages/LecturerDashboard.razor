@@ -1,0 +1,98 @@
+﻿@page "/lecturer-dashboard"
+@inject LAssignmentService AssignmentService
+@inject StudentService StudentService
+@inject IJSRuntime JSRuntime
+
+<h3 style="color: #333; font-family: Arial, sans-serif; margin-bottom: 20px;">Lecturer Dashboard</h3>
+
+<div style="margin-bottom: 20px;">
+    <h4>Assignment Overview</h4>
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: Arial, sans-serif;">
+        <thead>
+            <tr style="background-color: #f2f2f2; border-bottom: 2px solid #ddd;">
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Assignment #</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Topic</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Total Submissions</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Average Grade</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var assignment in Assignments)
+            {
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.AssignmentNumber</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.Topic</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.SubmissionCount</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.AverageGrade.ToString("F2")</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd;">@assignment.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h4>Student Performance Metrics</h4>
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: Arial, sans-serif;">
+        <thead>
+            <tr style="background-color: #f2f2f2; border-bottom: 2px solid #ddd;">
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Student Name</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Assignment #</th>
+                <th style="padding: 10px; border-bottom: 1px solid #ddd;">Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Students)
+            {
+                @foreach (var grade in student.Grades)
+                {
+                    <tr>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">@student.Name</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">@grade.AssignmentNumber</td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">@grade.Score.ToString("F2")</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h4>Grade Distribution</h4>
+    <canvas id="gradeDistributionChart" style="width:100%;max-width:600px"></canvas>
+</div>
+
+<div>
+    <h4>Average Grades Over Time</h4>
+    <canvas id="averageGradesChart" style="width:100%;max-width:600px"></canvas>
+</div>
+
+@code {
+    private List<LAssignment> Assignments;
+    private List<Student> Students;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Assignments = await AssignmentService.GetAssignmentsAsync();
+        Students = await StudentService.GetStudentsAsync();
+        await InitializeCharts();
+    }
+
+    private async Task InitializeCharts()
+    {
+        // Example data for charts
+        var labels = Assignments.Select(a => a.Topic).ToArray();
+        var averageGrades = Assignments.Select(a => a.AverageGrade).ToArray();
+        var gradeCounts = Students.SelectMany(s => s.Grades).GroupBy(g => g.Score)
+                                  .Select(g => new { Score = g.Key, Count = g.Count() })
+                                  .OrderBy(g => g.Score)
+                                  .ToList();
+
+        // Initialize grade distribution chart
+        await JSRuntime.InvokeVoidAsync("drawGradeDistributionChart", gradeCounts.Select(gc => gc.Score).ToArray(), gradeCounts.Select(gc => gc.Count).ToArray());
+
+        // Initialize average grades chart
+        await JSRuntime.InvokeVoidAsync("drawAverageGradesChart", labels, averageGrades);
+    }
+}
