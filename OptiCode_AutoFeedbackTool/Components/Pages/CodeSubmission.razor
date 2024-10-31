@@ -365,14 +365,59 @@ else
         return true;
     }
 
+    public static CodeAnalysisResult AnalyzeDuplicacy(string src)
+    {
+        string[] linesOfCode = src.Split(new[] { "\r\n" }, StringSplitOptions.None);
+        var snippetOccurrences = new Dictionary<string, int>();
+        var suggestions = new List<string>();
+
+        for (int i = 0; i < linesOfCode.Length; i++)
+        {
+            string trimmedLine = linesOfCode[i].Trim();
+
+            if (string.IsNullOrEmpty(trimmedLine))
+                continue;
+
+            if (snippetOccurrences.ContainsKey(trimmedLine))
+            {
+                snippetOccurrences[trimmedLine]++;
+            }
+            else
+            {
+                snippetOccurrences[trimmedLine] = 1;
+            }
+        }
+
+        // Prepare the result arrays
+        var codeSnippets = new List<string>();
+        var occurrences = new List<int>();
+        var textSuggestions = new List<string>();
+
+        foreach (var kvp in snippetOccurrences)
+        {
+            codeSnippets.Add(kvp.Key);
+            occurrences.Add(kvp.Value);
+            textSuggestions.Add($"Consider refactoring line: {kvp.Key}");
+        }
+
+        return new CodeAnalysisResult
+            {
+                CodeSnippets = codeSnippets.ToArray(),
+                Occurrences = occurrences.ToArray(),
+                TextSuggestions = textSuggestions.ToArray()
+            };
+    }
+
+
     private async Task SubmitCodeToPiston(string sourceCode, string language, string version)
     {
-        
+
         try
         {
             loading = true;
 
             //=========================== Code Execution =================================//
+            numberOfLines = CountNumberOfLines(sourceCode);
             string wrappedJavaCode = WrapJavaCodeWithMemoryTracking(sourceCode);
             await IncrementProgress(); //1/8
 
@@ -384,31 +429,32 @@ else
 
                 //=========================== Summary Analysis =================================//
 
-                numberOfLines = CountNumberOfLines(sourceCode);
-                string reportContent_Summary = await codeAnalysisTool.GetSummary(sourceCode, "java") ?? "";
+                //string reportContent_Summary = await codeAnalysisTool.GetSummary(sourceCode, "java") ?? "";
                 await IncrementProgress(); //2
 
-                var jsonObject_summary = JObject.Parse(reportContent_Summary);
-                var content_summary = jsonObject_summary.ToString();
-                var analysis_summary = new JObject();
-                analysis_summary = JObject.Parse(content_summary);
+                // var jsonObject_summary = JObject.Parse(reportContent_Summary);
+                // var content_summary = jsonObject_summary.ToString();
+                // var analysis_summary = new JObject();
+                // analysis_summary = JObject.Parse(content_summary);
 
-                if (analysis_summary != null)
-                {
-                    var summary = analysis_summary["summary"] !=null ? analysis_summary["summary"] : (analysis_summary["overall"] != null ? analysis_summary : "");
+                // if (analysis_summary != null)
+                // {
+                //     var summary = analysis_summary["summary"] !=null ? analysis_summary["summary"] : (analysis_summary["overall"] != null ? analysis_summary : "");
 
-                    var overallScore = summary["overall"]["score"].ToString();
+                //     var overallScore = summary["overall"]["score"].ToString();
 
-                    var duplicateCode = ExtractCriterion(summary["duplicate_code"]);
-                    var complexity = ExtractCriterion(summary["overall_complexity"]);
-                    var codeReadability = ExtractCriterion(summary["code_readibility"]);
-                    var code_structure = ExtractCriterion(summary["code_structure"]);
-                    var maintainability = ExtractCriterion(summary["maintainability"]);
-                    var data_structure_choice = ExtractCriterion(summary["data_structure_choice"]);
-                    var commentCoverage = ExtractCriterion(summary["comment_coverage"]);
-                    var error_handling = ExtractCriterion(summary["error_handling"]);
-                    var adherenceToCodingStandards = ExtractCriterion(summary["adherence_to_coding_standards"]);
-                }
+                //     var duplicateCode = ExtractCriterion(summary["duplicate_code"]);
+                //     var complexity = ExtractCriterion(summary["overall_complexity"]);
+                //     var codeReadability = ExtractCriterion(summary["code_readibility"]);
+                //     var code_structure = ExtractCriterion(summary["code_structure"]);
+                //     var maintainability = ExtractCriterion(summary["maintainability"]);
+                //     var data_structure_choice = ExtractCriterion(summary["data_structure_choice"]);
+                //     var commentCoverage = ExtractCriterion(summary["comment_coverage"]);
+                //     var error_handling = ExtractCriterion(summary["error_handling"]);
+                //     var adherenceToCodingStandards = ExtractCriterion(summary["adherence_to_coding_standards"]);
+                // }
+
+                AnalyzeDuplicacy(sourceCode);
 
                 await IncrementProgress(); //3
 
@@ -646,6 +692,12 @@ else
         public string Url { get; set; }
         public string Name { get; set; }
         public string KeyFindings { get; set; }
+    }
+    public class CodeAnalysisResult
+    {
+        public string[] CodeSnippets { get; set; }
+        public int[] Occurrences { get; set; }
+        public string[] TextSuggestions { get; set; }
     }
 
 
