@@ -7,20 +7,24 @@
       "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\pages\\setupassignment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\setupassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\setupassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\pages\\codesubmission.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\pages\\codesubmission.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\requirements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\requirements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\setupassignment_.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\setupassignment_.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\setupassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\setupassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\setupassignment_.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\setupassignment_.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\lassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\lassignmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\pages\\codesubmission.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|solutionrelative:opticode_autofeedbacktool\\components\\pages\\codesubmission.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21C93FDA-0C65-4D7F-B270-C390D186AB5A}|OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj|c:\\newestsource\\opticode_automaticfeedbacktool\\opticode_autofeedbacktool\\components\\pages\\lecturerdashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -162,11 +162,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "LAssignment.cs",
               "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\LAssignment.cs",
               "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\LAssignment.cs",
@@ -175,8 +175,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-31T06:21:32.765Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -200,29 +199,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SetupAssignment_.cs",
-              "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\SetupAssignment_.cs",
-              "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\SetupAssignment_.cs",
-              "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\SetupAssignment_.cs",
-              "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\SetupAssignment_.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
+              "DocumentIndex": 2,
+              "Title": "Requirements.cs",
+              "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Requirements.cs",
+              "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\Requirements.cs",
+              "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Requirements.cs",
+              "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Requirements.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T06:34:49.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SetUPAssignmentService.cs",
-              "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\SetUPAssignmentService.cs",
-              "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\SetUPAssignmentService.cs",
-              "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\SetUPAssignmentService.cs",
-              "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\SetUPAssignmentService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T06:28:14.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T06:36:07.949Z"
             },
             {
               "$type": "Document",
@@ -232,53 +217,26 @@
               "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\Pages\\SetupAssignment.razor",
               "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Pages\\SetupAssignment.razor",
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Pages\\SetupAssignment.razor",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAEMAAAAAAAAA",
+              "ViewState": "AQIAADUAAAAAAAAAAAAUwEsAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-31T06:27:03.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Program.cs",
-              "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Program.cs",
-              "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Program.cs",
-              "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T19:13:28.1Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\Layout\\NavMenu.razor",
               "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACUAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-18T19:33:34.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:33:34.866Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Requirements.cs",
-              "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Requirements.cs",
-              "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\Requirements.cs",
-              "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Requirements.cs",
-              "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Requirements.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T06:36:07.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "PrevAssignments.razor",
               "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Pages\\PrevAssignments.razor",
               "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\Pages\\PrevAssignments.razor",
@@ -286,12 +244,11 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Pages\\PrevAssignments.razor",
               "ViewState": "AQIAABoAAAAAAAAAAAAhwC4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-31T05:56:31.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T05:56:31.591Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "LAssignmentService.cs",
               "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\LAssignmentService.cs",
               "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\LAssignmentService.cs",
@@ -299,21 +256,56 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\LAssignmentService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T06:22:04.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T06:22:04.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "CodeSubmission.razor",
               "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Pages\\CodeSubmission.razor",
               "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\Pages\\CodeSubmission.razor",
               "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\Pages\\CodeSubmission.razor",
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Pages\\CodeSubmission.razor",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAWwGAAAAAMAAAA",
+              "ViewState": "AQIAADgBAAAAAAAAAAAAAEMBAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-21T22:06:46.134Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Program.cs",
+              "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Program.cs",
+              "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Program.cs",
+              "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T19:13:28.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SetUPAssignmentService.cs",
+              "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\SetUPAssignmentService.cs",
+              "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\SetUPAssignmentService.cs",
+              "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\SetUPAssignmentService.cs",
+              "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\SetUPAssignmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T06:28:14.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SetupAssignment_.cs",
+              "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\SetupAssignment_.cs",
+              "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool\\Components\\SetupAssignment_.cs",
+              "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool\\Components\\SetupAssignment_.cs",
+              "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\SetupAssignment_.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T06:34:49.437Z"
             },
             {
               "$type": "Document",
@@ -325,8 +317,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Pages\\LecturerDashboard.razor",
               "ViewState": "AQIAAAgAAAAAAAAAAAAhwCQAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-31T06:14:16.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T06:14:16.9Z"
             },
             {
               "$type": "Document",
@@ -338,8 +329,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\StudentService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T06:17:31.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T06:17:31.1Z"
             },
             {
               "$type": "Document",
@@ -351,8 +341,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Student.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T06:16:09.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T06:16:09.913Z"
             },
             {
               "$type": "Document",
@@ -364,8 +353,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\PistonService.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAC4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T22:21:02.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T22:21:02.407Z"
             },
             {
               "$type": "Document",
@@ -377,8 +365,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\_Imports.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-21T22:26:29.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T22:26:29.663Z"
             },
             {
               "$type": "Document",
@@ -390,8 +377,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\AssignmentService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T05:57:36.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T05:57:36.081Z"
             },
             {
               "$type": "Document",
@@ -403,8 +389,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\PrevAssignment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T05:58:36.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T05:58:36.542Z"
             },
             {
               "$type": "Document",
@@ -416,21 +401,19 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-18T19:13:15.882Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:13:15.882Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "OptiCode_AutoFeedbackTool.Client",
+              "Title": "OptiCode_AutoFeedbackTool.Client.csproj",
               "DocumentMoniker": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj",
               "RelativeDocumentMoniker": "OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj",
               "ToolTip": "C:\\NewestSource\\OptiCode_AutomaticFeedbackTool\\OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj",
               "RelativeToolTip": "OptiCode_AutoFeedbackTool.Client\\OptiCode_AutoFeedbackTool.Client.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-31T06:06:41.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T06:06:41.682Z"
             },
             {
               "$type": "Document",
@@ -442,8 +425,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\App.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-21T22:18:19.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T22:18:19.585Z"
             },
             {
               "$type": "Document",
@@ -455,8 +437,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\wwwroot\\JS\\chart.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-30T09:18:20.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T09:18:20.385Z"
             },
             {
               "$type": "Document",
@@ -468,8 +449,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Pages\\Home.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-18T19:43:32.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:43:32.038Z"
             },
             {
               "$type": "Document",
@@ -481,8 +461,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Layout\\MainLayout.razor.css",
               "ViewState": "AQIAAFoAAAAAAAAAAAAAAGEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-22T00:43:41.944Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T00:43:41.944Z"
             },
             {
               "$type": "Document",
@@ -494,8 +473,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\wwwroot\\assignmentScreen.css",
               "ViewState": "AQIAAGoAAAAAAAAAAAAuwHIAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-22T01:01:34.089Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T01:01:34.089Z"
             },
             {
               "$type": "Document",
@@ -507,8 +485,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\wwwroot\\app.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-31T04:51:39.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T04:51:39.736Z"
             },
             {
               "$type": "Document",
@@ -520,8 +497,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Data\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T20:14:16.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T20:14:16.795Z"
             },
             {
               "$type": "Document",
@@ -533,8 +509,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool.Client\\Pages\\Auth.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T15:54:58.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:54:58.241Z"
             },
             {
               "$type": "Document",
@@ -546,8 +521,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Data\\ApplicationUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T19:16:09.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:16:09.045Z"
             },
             {
               "$type": "Document",
@@ -559,8 +533,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Account\\IdentityUserAccessor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:55:47.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:55:47.771Z"
             },
             {
               "$type": "Document",
@@ -572,8 +545,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Account\\IdentityRedirectManager.cs",
               "ViewState": "AQIAACYAAAAAAAAAAABRwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:55:51.49Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:55:51.49Z"
             },
             {
               "$type": "Document",
@@ -585,8 +557,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\CodeAnalysisTool.cs",
               "ViewState": "AQIAAIYAAAAAAAAAAABRwKQAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T22:20:20.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T22:20:20.831Z"
             },
             {
               "$type": "Document",
@@ -598,8 +569,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\SubmissionResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAABBwBYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T22:21:32.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T22:21:32.985Z"
             },
             {
               "$type": "Document",
@@ -611,8 +581,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool.Client\\Pages\\Counter.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-18T19:21:46.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:21:46.649Z"
             },
             {
               "$type": "Document",
@@ -624,8 +593,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Routes.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-18T19:38:22.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:38:22.283Z"
             },
             {
               "$type": "Document",
@@ -637,8 +605,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\OptiCode_AutoFeedbackTool.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-21T22:09:38.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T22:09:38.885Z"
             },
             {
               "$type": "Document",
@@ -650,8 +617,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Account\\Pages\\RegisterConfirmation.razor",
               "ViewState": "AQIAACYAAAAAAAAAAEBlwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-18T19:22:00.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:22:00.495Z"
             },
             {
               "$type": "Document",
@@ -663,8 +629,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool\\Components\\Account\\Pages\\Login.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-18T19:21:55.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:21:55.901Z"
             },
             {
               "$type": "Document",
@@ -676,8 +641,7 @@
               "RelativeToolTip": "OptiCode_AutoFeedbackTool.Client\\_Imports.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-18T19:21:48.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T19:21:48.173Z"
             }
           ]
         }
